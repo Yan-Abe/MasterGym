@@ -26,18 +26,18 @@ export function SignIn(){
 
          <View style={styles.content}>
             <Text style={styles.title}>
-              Organize{`\n`}
-              suas jogatinas{`\n`}
-              facilmente
+            Conecte-se{`\n`}
+            e organize seus{`\n`}
+            treinos
             </Text>
 
             <Text style={styles.subtitle}>
-              Crie grupos para jogar seus games {`\n`}
-              favoritos com seus amigos
+            Entre com sua conta para {`\n`}
+            ter acesso aos treinos!
             </Text>
 
           <ButtonIcon 
-            title="Entrar com Discord"
+            title="Entrar com o Gmail"
             activeOpacity={0.7}
             />
 
