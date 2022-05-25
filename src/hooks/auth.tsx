@@ -17,6 +17,7 @@ const { RESPONSE_TYPE } = process.env
 
 import { api } from '../services/api'
 import { COLLECTION_USERS } from '../configs/database'
+import { Home } from '../screens/Home'
 
 type User = {
   id: string
