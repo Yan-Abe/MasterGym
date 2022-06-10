@@ -19,7 +19,8 @@ export type AppointmentProps = {
   category: string
   date: string
   description: string,
-  series: string
+  series: string,
+  trainninglist: number
 }
 
 type Props = RectButtonProps & {

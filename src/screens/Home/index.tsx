@@ -21,7 +21,8 @@ export function Home() {
       category: '1',
       date: '22/06 às 20:40h',
       description: 'No pain, no gain',
-      series: '8x'
+      series: '8x',
+      trainninglist: 3
     },
     {
       id: '2',
@@ -29,7 +30,8 @@ export function Home() {
       category: '2',
       date: '22/06 às 20:40h',
       description: 'No pain, no gain',
-      series: '6x'
+      series: '6x',
+      trainninglist: 2
     },
     {
       id: '2',
@@ -37,7 +39,8 @@ export function Home() {
       category: '2',
       date: '22/06 às 20:40h',
       description: 'No pain, no gain',
-      series: '6x'
+      series: '6x',
+      trainninglist: 4
     },
     {
       id: '2',
@@ -45,7 +48,8 @@ export function Home() {
       category: '2',
       date: '22/06 às 20:40h',
       description: 'No pain, no gain',
-      series: '6x'
+      series: '6x',
+      trainninglist: 3
     },
     {
       id: '2',
@@ -53,7 +57,8 @@ export function Home() {
       category: '2',
       date: '22/06 às 20:40h',
       description: 'No pain, no gain',
-      series: '6x'
+      series: '6x',
+      trainninglist: 2
     }
   ]
   // Essencial para linkar as telas

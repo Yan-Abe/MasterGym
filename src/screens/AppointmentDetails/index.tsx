@@ -57,6 +57,7 @@ type GuildWidget = {
 }
 
 export function AppointmentDetails(){
+  const { secondary50, secondary70, secondary80, secondary100  } = theme.colors
   const members = [
     { 
       id: '1',
@@ -84,14 +85,13 @@ export function AppointmentDetails(){
     }
   ];
 
-
-
   const [widget, setWidget] = useState<GuildWidget>({} as GuildWidget);
   const [loading, setLoading] = useState(true);
-  const { secondary50, secondary70 } = theme.colors
   const route = useRoute();
   const { guildSelected } = route.params as Params;
-  const { secondary80, secondary100 } = theme.colors
+  
+  var generateCard: boolean;
+
   async function fetchGuildWidget() {
     try {
       const response = await api.get(`/guilds/${guildSelected.guild.id}/widget.json`);
@@ -179,6 +179,10 @@ export function AppointmentDetails(){
     >
       {/* lista de categorias-> percorrer cada uma delas */}
       {exercises.map(exercises => (
+        
+        // exercises.trainninglist.map(trainninglist => (trainninglist === 1? generateCard = true: generateCard = false))
+        // &&
+        // generateCard &&  
         <Member
           key={exercises.id}
           title={exercises.title}
@@ -187,7 +191,8 @@ export function AppointmentDetails(){
           // checked={exercises.id === categorySelected}
           // onPress={() => setCategory(exercises.id)}
           // hasCheckBox={hasCheckBox}
-        />
+          />
+
       ))}
     </ScrollView>
       {/* <FlatList 
