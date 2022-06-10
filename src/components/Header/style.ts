@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
     width: '100%',
     height: 102,
     paddingTop: getStatusBarHeight(),
-    // paddingHorizontal: 24,
+    paddingHorizontal: 24,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center'

@@ -8,6 +8,7 @@ import { styles } from './styles';
 import { Avatar } from '../Avatar';
 import { theme } from '../../global/styles/theme';
 import { SvgProps } from 'react-native-svg'
+import { ListDivider } from '../../components/ListDivider';
 
 export type MemberProps = {
   id: string;
@@ -83,6 +84,9 @@ export function Member({
             { levelText? levelText : 'Factível' }
           </Text>
         </View>
+      </View>
+      <View style={styles.mainBar}>
+        <ListDivider isCentered={true} />
       </View>
     </View>
   );

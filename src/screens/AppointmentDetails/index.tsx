@@ -20,7 +20,6 @@ import { api } from '../../services/api';
 import { LinearGradient } from 'expo-linear-gradient'
 import { ScrollView } from 'react-native'
 import { AppointmentProps } from '../../components/Appointment';
-import { ListDivider } from '../../components/ListDivider';
 import { Background } from '../../components/Background';
 import { ListHeader } from '../../components/ListHeader';
 import { ButtonIcon } from '../../components/ButtonIcon';
@@ -32,6 +31,7 @@ import { exercises } from '../../utils/exercises'
 
 
 type Props = {
+  // trainninglist: number
   //para os exercícios
   //para os exercícios
   //para os exercícios
@@ -173,28 +173,46 @@ export function AppointmentDetails(){
       {/* PARA OS EXERCÍCIOS */}
       <ScrollView
       // horizontal
-      style={styles.container}
+      style={styles.members}
       showsHorizontalScrollIndicator={false}
       contentContainerStyle={{ paddingRight: 40 }}
     >
       {/* lista de categorias-> percorrer cada uma delas */}
       {exercises.map(exercises => (
         
-        // exercises.trainninglist.map(trainninglist => (trainninglist === 1? generateCard = true: generateCard = false))
+        //IMPLEMENTAR A LÓGICA DO TIPO DE TREINO/LUTA OU DANÇA
+        exercises.trainninglist.map(
+                // trainninglist => (trainninglist === TrainningList?  <Member
+                trainninglist => (trainninglist === 4?  
+                  <View key={exercises.id}>
+                      <Member
+                        key={exercises.id}
+                        title={exercises.title}
+                        icon={exercises.icon}
+                        difficulty={exercises.difficulty}
+                        />
+                    </View>
+                  : null))
         // &&
         // generateCard &&  
-        <Member
-          key={exercises.id}
-          title={exercises.title}
-          icon={exercises.icon}
-          difficulty={exercises.difficulty}
-          // checked={exercises.id === categorySelected}
-          // onPress={() => setCategory(exercises.id)}
-          // hasCheckBox={hasCheckBox}
-          />
+        // <Member
+        //   key={exercises.id}
+        //   title={exercises.title}
+        //   icon={exercises.icon}
+        //   difficulty={exercises.difficulty}
+        // checked={exercises.id === categorySelected}
+        // onPress={() => setCategory(exercises.id)}
+        // hasCheckBox={hasCheckBox}
+        //   />
 
       ))}
     </ScrollView>
+    <View style={styles.footer}>
+          <ButtonIcon 
+            title="Mandar Treino por Email" 
+            onPress={handleOpenGuild}
+          />
+    </View>
       {/* <FlatList 
             data={widget.members}
             keyExtractor={item => item.id}
@@ -218,7 +236,6 @@ export function AppointmentDetails(){
             renderItem={({ item }) => (
               <Member data={item} />
             )}
-            ItemSeparatorComponent={() => <ListDivider isCentered />}
             style={styles.members}
           />
         </>

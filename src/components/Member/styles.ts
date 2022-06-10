@@ -28,6 +28,10 @@ export const styles = StyleSheet.create({
     marginRight: 9
   },
   icon: {
-    transform: [{ rotate: '180deg' }]
+    marginRight: 10
+    // transform: [{ rotate: '180deg' }]
+  },
+  mainBar: {
+    marginTop: 40
   }
 })
