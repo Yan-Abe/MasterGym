@@ -139,21 +139,20 @@ export function AppointmentDetails(){
             </BorderlessButton>
           }
       />
+        <ImageBackground 
+            source={BannerImg}
+            style={styles.banner}
+            >
+            <View style={styles.bannerContent}>
+                  <Text style={styles.title}> 
+                    { guildSelected.guild.name }
+                  </Text>
 
-      <ImageBackground 
-          source={BannerImg}
-          style={styles.banner}
-          >
-          <View style={styles.bannerContent}>
-                <Text style={styles.title}> 
-                  { guildSelected.guild.name }
-                </Text>
-
-                <Text style={styles.subtitle}>
-                  { guildSelected.description }
-                </Text>
-          </View>
-      </ImageBackground>
+                  <Text style={styles.subtitle}>
+                    { guildSelected.description }
+                  </Text>
+            </View>
+        </ImageBackground>
       <ListHeader 
             title="Exercícios"
             // subtitle={`Total ${widget.members.length}`}

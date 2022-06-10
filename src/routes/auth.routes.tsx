@@ -17,6 +17,7 @@ import { Background } from '../components/Background'
 
 import { Home } from '../screens/Home'
 import { AppointmentDetails } from '../screens/AppointmentDetails'
+import { AppointmentCreate } from '../screens/AppointmentCreate'
 import { Header } from '../components/Header'
 // import { AppointmentCreate } from '../screens/AppointmentCreate';
 import { SignIn } from '../screens/SignIn'
@@ -72,6 +73,14 @@ export function AuthRoutes() {
       <Screen 
         name="AppointmentDetails"
         component={AppointmentDetails}
+        options={({}) => ({
+          headerShown: false
+          // backgroundColor: '#B01A11'
+        })}
+      />
+      <Screen 
+        name="AppointmentCreate"
+        component={AppointmentCreate}
         options={({}) => ({
           headerShown: false
           // backgroundColor: '#B01A11'

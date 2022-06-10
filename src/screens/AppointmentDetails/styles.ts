@@ -10,6 +10,8 @@ export const styles = StyleSheet.create({
   banner: {
     width: '100%',
     height: 234
+    // opacity: 0.6
+    // borderTopColor: '#000'
   },
   bannerContent: {
     flex: 1,
