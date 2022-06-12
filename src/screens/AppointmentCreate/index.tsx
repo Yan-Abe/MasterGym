@@ -3,7 +3,7 @@ import { Feather } from '@expo/vector-icons';
 import { RectButton } from 'react-native-gesture-handler';
 // import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
-// import uuid from 'react-native-uuid';
+import uuid from 'react-native-uuid';
 import { ButtonIcon } from '../../components/ButtonIcon';
 
 import {
@@ -63,12 +63,21 @@ export function AppointmentCreate(){
     setCategory(categoryId);
   } 
 
+  /**
+   * @TAKEALOOK
+   * @SECION_ON_TRACING
+   */
   // async function handleSave() {
-  //   const newAppointment = {
-  //     id: uuid.v4(),
-  //     guild,
-  //     category,
-  //     date: `${day}/${month} às ${hour}:${minute}h`,
+      
+        /**
+         * @TAKEALOOK
+         * @FIXING_BUGS
+         */
+    //   const newAppointment = {
+      //     id: uuid.v4(),
+      //     guild,
+      //     category,
+      //     date: `${day}/${month} às ${hour}:${minute}h`,
   //     description
   //   };
 
@@ -265,12 +274,14 @@ export function AppointmentCreate(){
                     />
                 </View>
             </View>
-            
-      {//------------------------------------------------------------------------------------
-      /*BOTÃO DE ENVIO DE TREINO POR EMAIL  */}
+              {
+                  /**
+                   *@SEND_MAIL
+                  */
+                }
               <View style={styles.footer}>
                 <ButtonIcon 
-                  title="" 
+                  title="Enviar Treino por email" 
                   // keep data in db
                   onPress={handleOpenGuilds}
                   />

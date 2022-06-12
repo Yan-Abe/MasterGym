@@ -30,11 +30,11 @@ export default function App() {
 
   return (
     <Background>
-      <StatusBar
+      {/* <StatusBar
         barStyle="light-content"
         backgroundColor="transparent"
         translucent
-      />
+      /> */}
       <Routes />
       {/* <AuthProvider>
       </AuthProvider> */}

@@ -17,7 +17,7 @@ export function Home() {
   const appointments = [
     {
       id: '1',
-      guild: { id: '1', name: 'Buchinho de lum...', icon: null, owner: true },
+      guild: { id: '1', name: 'Peito de aço', icon: null, owner: true },
       category: '1',
       date: '22/06 às 20:40h',
       description: 'No pain, no gain',
@@ -26,7 +26,7 @@ export function Home() {
     },
     {
       id: '2',
-      guild: { id: '1', name: 'Perna torneada..', icon: null, owner: false },
+      guild: { id: '1', name: 'Perna torneada', icon: null, owner: false },
       category: '2',
       date: '22/06 às 20:40h',
       description: 'No pain, no gain',
@@ -34,32 +34,32 @@ export function Home() {
       trainninglist: 2
     },
     {
-      id: '2',
-      guild: { id: '1', name: 'GigaBíceps...', icon: null, owner: false },
-      category: '2',
+      id: '3',
+      guild: { id: '1', name: 'Abdômen Trinca...', icon: null, owner: false },
+      category: '3',
       date: '22/06 às 20:40h',
       description: 'No pain, no gain',
       series: '6x',
+      trainninglist: 2
+    },
+    {
+      id: '4',
+      guild: { id: '1', name: 'GigaBíceps', icon: null, owner: false },
+      category: '6',
+      date: '22/06 às 20:40h',
+      description: 'No pain, no gain',
+      series: '',
       trainninglist: 4
     },
     {
-      id: '2',
-      guild: { id: '1', name: 'Buchinho de lum...', icon: null, owner: false },
-      category: '2',
+      id: '5',
+      guild: { id: '1', name: 'Fórmula Trapézi...', icon: null, owner: false },
+      category: '1',
       date: '22/06 às 20:40h',
       description: 'No pain, no gain',
       series: '6x',
       trainninglist: 3
     },
-    {
-      id: '2',
-      guild: { id: '1', name: 'Buchinho de lum...', icon: null, owner: false },
-      category: '2',
-      date: '22/06 às 20:40h',
-      description: 'No pain, no gain',
-      series: '6x',
-      trainninglist: 2
-    }
   ]
   // Essencial para linkar as telas
   const navigation = useNavigation()
@@ -71,6 +71,7 @@ export function Home() {
 
   function handleAppointmentDetails(guildSelected: AppointmentProps) {
     navigation.navigate('AppointmentDetails', { guildSelected })
+    // navigation.navigate('AppointmentDetails' as never, { guildSelected })
   }
 
   function handleAppointmentCreate() {
