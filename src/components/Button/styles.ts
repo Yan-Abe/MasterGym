@@ -5,7 +5,11 @@ export const styles = StyleSheet.create({
   container: {
     width: '100%',
     height: 56,
+<<<<<<< HEAD
     // backgroundColor: theme.colors.primary,
+=======
+    backgroundColor: theme.colors.primary,
+>>>>>>> 35b340016fbd0982d47a5f65f4db9daf954b1c0c
     borderRadius: 8,
     flexDirection: 'row',
     alignItems: 'center'

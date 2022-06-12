@@ -14,6 +14,7 @@ import {
   Platform
 } from 'react-native';
 
+<<<<<<< HEAD
 import { styles } from './styles';
 import { theme } from '../../global/styles/theme';
 import { api } from '../../services/api';
@@ -44,6 +45,22 @@ type Props = {
 }
 
 
+=======
+import BannerImg from '../../assets/banner.png';
+
+import { styles } from './styles';
+import { theme } from '../../global/styles/theme';
+import { api } from '../../services/api';
+
+import { AppointmentProps } from '../../components/Appointment';
+import { ListDivider } from '../../components/ListDivider';
+import { Background } from '../../components/Background';
+import { ListHeader } from '../../components/ListHeader';
+import { ButtonIcon } from '../../components/ButtonIcon';
+import { Member, MemberProps } from '../../components/Member';
+import { Header } from '../../components/Header';
+import { Load } from '../../components/Load';
+>>>>>>> 35b340016fbd0982d47a5f65f4db9daf954b1c0c
 
 type Params = {
   guildSelected: AppointmentProps
@@ -57,6 +74,7 @@ type GuildWidget = {
 }
 
 export function AppointmentDetails(){
+<<<<<<< HEAD
   const { secondary50, secondary70, secondary80, secondary100  } = theme.colors
   const members = [
     { 
@@ -91,6 +109,13 @@ export function AppointmentDetails(){
   const { guildSelected } = route.params as Params;
   
   var generateCard: boolean;
+=======
+  const [widget, setWidget] = useState<GuildWidget>({} as GuildWidget);
+  const [loading, setLoading] = useState(true);
+
+  const route = useRoute();
+  const { guildSelected } = route.params as Params;
+>>>>>>> 35b340016fbd0982d47a5f65f4db9daf954b1c0c
 
   async function fetchGuildWidget() {
     try {
@@ -103,6 +128,7 @@ export function AppointmentDetails(){
     }
   }
 
+<<<<<<< HEAD
   // function handleShareInvitation() {
   //   const message = Platform.OS === 'ios' 
   //   ? `Junte-se a ${guildSelected.guild.name}`
@@ -113,11 +139,24 @@ export function AppointmentDetails(){
   //     url: widget.instant_invite
   //   });    
   // }
+=======
+  function handleShareInvitation() {
+    const message = Platform.OS === 'ios' 
+    ? `Junte-se a ${guildSelected.guild.name}`
+    : widget.instant_invite;
+
+    Share.share({
+      message,
+      url: widget.instant_invite
+    });    
+  }
+>>>>>>> 35b340016fbd0982d47a5f65f4db9daf954b1c0c
 
   function handleOpenGuild(){
     Linking.openURL(widget.instant_invite);
   }
 
+<<<<<<< HEAD
   // useEffect(() => {
   //   fetchGuildWidget();
   // },[]);
@@ -222,6 +261,43 @@ export function AppointmentDetails(){
             style={styles.members}
       /> */}
       {/* {
+=======
+  useEffect(() => {
+    fetchGuildWidget();
+  },[]);
+  return (
+    <Background>
+      <Header 
+        title="Detalhes"
+        action={
+          guildSelected.guild.owner &&
+          <BorderlessButton onPress={handleShareInvitation}>
+            <Fontisto 
+              name="share"
+              size={24}
+              color={theme.colors.primary}
+            />
+          </BorderlessButton>
+        }
+      />
+
+      <ImageBackground 
+        source={BannerImg}
+        style={styles.banner}
+      >
+        <View style={styles.bannerContent}>
+          <Text style={styles.title}> 
+            { guildSelected.guild.name }
+          </Text>
+
+          <Text style={styles.subtitle}>
+            { guildSelected.description }
+          </Text>
+        </View>
+      </ImageBackground>
+
+      {
+>>>>>>> 35b340016fbd0982d47a5f65f4db9daf954b1c0c
         loading ? <Load /> :
         <>
           <ListHeader 
@@ -235,6 +311,10 @@ export function AppointmentDetails(){
             renderItem={({ item }) => (
               <Member data={item} />
             )}
+<<<<<<< HEAD
+=======
+            ItemSeparatorComponent={() => <ListDivider isCentered />}
+>>>>>>> 35b340016fbd0982d47a5f65f4db9daf954b1c0c
             style={styles.members}
           />
         </>
@@ -248,7 +328,12 @@ export function AppointmentDetails(){
             onPress={handleOpenGuild}
           />
         </View>
+<<<<<<< HEAD
       } */}
    </Background>
+=======
+      }
+    </Background>
+>>>>>>> 35b340016fbd0982d47a5f65f4db9daf954b1c0c
   );
 }

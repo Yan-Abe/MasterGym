@@ -11,7 +11,11 @@ export const theme = {
     // gradient
     secondary100: '#0A1033',
     secondary90: '#0D133D',
+<<<<<<< HEAD
     secondary80: '#B01A31',
+=======
+    secondary80: '#0E1647',
+>>>>>>> 35b340016fbd0982d47a5f65f4db9daf954b1c0c
     secondary85: '#171F52',
     secondary70: '#1B2565',
     secondary60: '#1B2565',

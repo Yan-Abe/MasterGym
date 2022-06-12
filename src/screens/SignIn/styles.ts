@@ -6,12 +6,20 @@ export const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center'
+<<<<<<< HEAD
     // backgroundColor: theme.colors.background2
   },
   image: {
     width: '80%',
     height: '45%'
     // height: 360
+=======
+    // backgroundColor: theme.colors.background
+  },
+  image: {
+    width: '100%',
+    height: 360
+>>>>>>> 35b340016fbd0982d47a5f65f4db9daf954b1c0c
   },
   content: {
     marginTop: -40,
