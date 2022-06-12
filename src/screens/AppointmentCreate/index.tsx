@@ -150,16 +150,15 @@ export function AppointmentCreate(){
                           // ? <GuildIcon guildId={guild.id} iconId={guild.icon} /> 
                           // : <View style={styles.image} />
                           // <View style={styles.image} />
-                          <GuildIcon/>
+                          <GuildIcon/>?<GuildIcon/>:null
                         }
 
                         <View style={styles.selectBody}>
                           <Text style={styles.label}>
                             { 
-                              // guild.name 
-                              // ? guild.name 
-                              // : 'Selecione um servidor' 
-                              'Selecione um servidor' 
+                              guild.name 
+                              ? guild.name 
+                              : 'Selecione um servidor' 
                             }
                           </Text>
                         </View>
@@ -297,7 +296,7 @@ export function AppointmentCreate(){
           </Background>
         </ScrollView>  
         <ModalView visible={openGuildsModa} closeModal={handleCloseGuilds}>
-        <Guilds handleGuildSelect={handleGuildSelect}/>
+         <Guilds handleGuildSelect={handleGuildSelect}/>
         </ModalView>
       </KeyboardAvoidingView>              
     </LinearGradient>

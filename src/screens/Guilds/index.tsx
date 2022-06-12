@@ -14,23 +14,23 @@ type Props = {
 }
 
 export function Guilds({ handleGuildSelect }: Props){
-  const guilds = [
-    {
-      id: '1', 
-      name: 'Projeto Mutante',
-      icon: null, 
-      owner: true
-    }
-  ]
+  // const guilds = [
+  //   {
+  //     id: '1', 
+  //     name: 'Projeto Mutante',
+  //     icon: null, 
+  //     owner: true
+  //   }
+  // ]
 
 
-  // const [guilds, setGuilds] = useState<GuildProps[]>([]);
+  const [guilds, setGuilds] = useState<GuildProps[]>([]);
   const [loading, setLoading] = useState(true);
 
   async function fetchGuilds(){
     const response = await api.get('/users/@me/guilds');
 
-    // setGuilds(response.data);
+    setGuilds(response.data);
     setLoading(false);
   }
 
