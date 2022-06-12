@@ -19,13 +19,13 @@ import DancingSvg from '../assets/trainingCategoriesList/dancing.svg'
 export const categories = [
   {
     id: '1',
-    title: 'Treino Superior',
+    title: 'Treino \nSuperior',
     icon: Superior_bicepsSvg
   },
-  { id: '2', title: 'Treino Inferior', icon: Inferior_pernaSvg },
+  { id: '2', title: 'Treino \nInferior', icon: Inferior_pernaSvg },
   { id: '3', title: 'Treino de Abdômen', icon: AbdomenSvg },
   { id: '4', title: 'Esportes', icon: SportsSvg },
   { id: '5', title: 'Fisioterapia Assistida', icon: FisioSvg },
-  { id: '6', title: 'Avaliação Física', icon: Avaliacao_fisicaSvg },
+  { id: '6', title: 'Avaliação \nFísica', icon: Avaliacao_fisicaSvg },
   { id: '7', title: 'Danças', icon: DancingSvg }
 ]

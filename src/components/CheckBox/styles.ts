@@ -5,7 +5,8 @@ export const styles = StyleSheet.create({
   container: {
     width: '10%',
     height: 36,
-    // backgroundColor: theme.colors.primary,
+    // backgroundColor: 'red',
+    backgroundColor: theme.colors.secondary85,
     borderRadius: 8,
     flexDirection: 'row',
     alignItems: 'center'

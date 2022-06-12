@@ -223,23 +223,22 @@ export function AppointmentCreate(){
                   </Text>
                   <CheckBox
                   avoidStyle={false}
-                  title='1'
-                  style={{width: '1%', height: 1000}}/>
+                  title='1'/>
                   {/* onPress={setTrainingType} */}
                   
                   <CheckBox
-                  avoidStyle={true}
-                  style={{width: '1%', height: 1000}}/>
+                  avoidStyle={false}
+                  title='2'/>
                   {/* onPress={setTrainingType} */}
                   
                   <CheckBox
-                  avoidStyle={true}
-                  style={{width: '1%', height: 1000}}/>
+                  avoidStyle={false}
+                  title='3'/>
                   {/* onPress={setTrainingType} */}
                   
                   <CheckBox
-                  avoidStyle={true}
-                  style={{width: '1%', height: 1000}}/>
+                  avoidStyle={false}
+                  title='4'/>
                   {/* onPress={setTrainingType} */}
                 </View>
                 {
