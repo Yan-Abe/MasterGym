@@ -25,18 +25,18 @@ export function Guilds({ handleGuildSelect }: Props){
 
 
   // const [guilds, setGuilds] = useState<GuildProps[]>([]);
-  // const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
 
-  // async function fetchGuilds(){
-  //   const response = await api.get('/users/@me/guilds');
+  async function fetchGuilds(){
+    const response = await api.get('/users/@me/guilds');
 
     // setGuilds(response.data);
-  //   setLoading(false);
-  // }
+    setLoading(false);
+  }
 
-  // useEffect(() => {
-  //   fetchGuilds();
-  // },[]);
+  useEffect(() => {
+    fetchGuilds();
+  },[]);
 
 
   return (

@@ -11,8 +11,8 @@ import { styles } from './styles';
 import { Background } from '../Background';
 
 type Props = ModalProps & {
-  children: ReactNode;
-  closeModal: () => void;
+  children?: ReactNode;
+  closeModal?: () => void;
 }
 
 export function ModalView({

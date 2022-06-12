@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Feather } from '@expo/vector-icons';
 import { RectButton } from 'react-native-gesture-handler';
-// import AsyncStorage from '@react-native-async-storage/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 import uuid from 'react-native-uuid';
 import { ButtonIcon } from '../../components/ButtonIcon';
@@ -20,7 +20,7 @@ import { styles } from './styles';
 import { LinearGradient } from 'expo-linear-gradient';
 
 import { CategorySelect } from '../../components/CategorySelect';
-// import { ModalView } from '../../components/ModalView';
+import { ModalView } from '../../components/ModalView';
 import { Background } from '../../components/Background';
 import { SmallInput } from '../../components/SmallInput';
 import { SmallStringInput } from '../../components/SmallInput/variant';
@@ -30,7 +30,7 @@ import { GuildProps } from '../../components/Guild';
 import { Header } from '../../components/Header';
 import { Button } from '../../components/Button';
 import { CheckBox } from '../../components/CheckBox';
-// import { Guilds } from '../Guilds';
+import { Guilds } from '../Guilds';
 
 
 export function AppointmentCreate(){
@@ -94,202 +94,212 @@ export function AppointmentCreate(){
  
 
   return(
-    <KeyboardAvoidingView 
-        behavior={Platform.OS === 'ios' ? 'padding' : 'height' }
-        style={styles.container}>
-      <ScrollView>  
-      
-        <Background>
-          <LinearGradient
-            style={styles.container}
-            // colors={['red', 'black']}
-            colors={[secondary40, secondary80]}
-            start={{ x: 0.8, y: 0.2 }}
-            end={{ x: 0.1, y: 0.1 }}
-            >
+    <LinearGradient
+    style={styles.container}
+    // colors={['red', 'black']}
+    colors={[secondary40, secondary80]}
+    start={{ x: 0.8, y: 0.2 }}
+    end={{ x: 0.1, y: 0.1 }}>
 
-            <Header
-              title="Agendamento de Treinos"
-              action={null}
-              // color='#acf'
-              />
-            <Text style={[
-              styles.label, 
-              { marginLeft: 24, marginTop: 36, marginBottom: 18 }]}
+      <KeyboardAvoidingView 
+          behavior={Platform.OS === 'ios' ? 'padding' : 'height' }
+          style={[styles.container]}>
+        <ScrollView>  
+        
+          <Background>
+            <LinearGradient
+              style={styles.container}
+              // colors={['red', 'black']}
+              colors={[secondary40, secondary80]}
+              start={{ x: 0.8, y: 0.2 }}
+              end={{ x: 0.1, y: 0.1 }}
               >
-              Categoria
-            </Text>
-              
-            {
-              /**
-               *@SLIDE_OPTIONS
-              */
-            }
-            <CategorySelect
-              hasCheckBox
-              setCategory={setCategory}
-              categorySelected={category}/>
 
-            <View style={styles.form}>
-                {
-                  /**
-                   *@SERVER_OPTIONS_BUTTON
-                  */
-                }
-                <RectButton onPress={handleOpenGuilds}>
-                      <View style={styles.select}>
-                      {
-                        // guild.icon 
-                        // ? <GuildIcon guildId={guild.id} iconId={guild.icon} /> 
-                        // : <View style={styles.image} />
-                        // <View style={styles.image} />
-                        <GuildIcon/>
-                      }
+              <Header
+                title="Agendamento de Treinos"
+                action={null}
+                // color='#acf'
+                />
+              <Text style={[
+                styles.label, 
+                { marginLeft: 24, marginTop: 36, marginBottom: 18 }]}
+                >
+                Categoria
+              </Text>
+                
+              {
+                /**
+                 *@SLIDE_OPTIONS
+                */
+              }
+              <CategorySelect
+                hasCheckBox
+                setCategory={setCategory}
+                categorySelected={category}/>
 
-                      <View style={styles.selectBody}>
-                        <Text style={styles.label}>
-                          { 
-                            // guild.name 
-                            // ? guild.name 
-                            // : 'Selecione um servidor' 
-                            'Selecione um servidor' 
-                          }
+              <View style={styles.form}>
+                  {
+                    /**
+                     *@SERVER_OPTIONS_BUTTON
+                    */
+                  }
+                  <RectButton onPress={handleOpenGuilds}>
+                        <View style={styles.select}>
+                        {
+                          // guild.icon 
+                          // ? <GuildIcon guildId={guild.id} iconId={guild.icon} /> 
+                          // : <View style={styles.image} />
+                          // <View style={styles.image} />
+                          <GuildIcon/>
+                        }
+
+                        <View style={styles.selectBody}>
+                          <Text style={styles.label}>
+                            { 
+                              // guild.name 
+                              // ? guild.name 
+                              // : 'Selecione um servidor' 
+                              'Selecione um servidor' 
+                            }
+                          </Text>
+                        </View>
+
+                        <Feather 
+                          name="chevron-right"
+                          color={theme.colors.heading}
+                          size={18}
+                          />
+                        </View>
+                  </RectButton>
+
+                  {
+                    /**
+                     *@INPUT_FIELDS
+                    */
+                  }
+                  <View style={styles.field}>
+                    <View>
+                      <Text style={[styles.label, { marginBottom: 12 } ]}>
+                      Dia e mês
+                      </Text>
+                      
+                      <View style={styles.column}>
+                        <SmallInput 
+                        maxLength={2} 
+                        // onChangeText={setDay}
+                        />
+                        <Text style={styles.divider}>
+
                         </Text>
-                      </View>
-
-                      <Feather 
-                        name="chevron-right"
-                        color={theme.colors.heading}
-                        size={18}
+                        <SmallInput 
+                        maxLength={2} 
+                        // onChangeText={setMonth}
                         />
                       </View>
-                </RectButton>
-
-                {
-                  /**
-                   *@INPUT_FIELDS
-                  */
-                }
-                <View style={styles.field}>
-                  <View>
-                    <Text style={[styles.label, { marginBottom: 12 } ]}>
-                    Dia e mês
-                    </Text>
+                    </View>
                     
-                    <View style={styles.column}>
-                      <SmallInput 
-                      maxLength={2} 
-                      // onChangeText={setDay}
-                      />
-                      <Text style={styles.divider}>
-
+                    <View>
+                      <Text style={[styles.label, { marginBottom: 12 } ]}>
+                        Horário
                       </Text>
-                      <SmallInput 
-                      maxLength={2} 
-                      // onChangeText={setMonth}
-                      />
-                    </View>
+
+                      <View style={styles.column}>
+                        <SmallInput 
+                          maxLength={2} 
+                          // onChangeText={setHour}
+                          />
+                        <Text style={styles.divider}>
+                          :
+                        </Text>
+                        <SmallInput 
+                        maxLength={2} 
+                        // onChangeText={setMinute}
+                        />
+                      </View>
+                    </View>           
                   </View>
-                  
-                  <View>
-                    <Text style={[styles.label, { marginBottom: 12 } ]}>
-                      Horário
+                  {
+                    /**
+                     *@CHECK_BOXES
+                    */
+                  }
+                  {/* Tipo de treino */}
+                  <View style={styles.field2}>
+                    <Text style={[styles.label, { marginTop: 6 } ]}>
+                      Tipo de treino 
+                    </Text>
+                    <CheckBox
+                    avoidStyle={false}
+                    title='1'/>
+                    {/* onPress={setTrainingType} */}
+                    
+                    <CheckBox
+                    avoidStyle={false}
+                    title='2'/>
+                    {/* onPress={setTrainingType} */}
+                    
+                    <CheckBox
+                    avoidStyle={false}
+                    title='3'/>
+                    {/* onPress={setTrainingType} */}
+                    
+                    <CheckBox
+                    avoidStyle={false}
+                    title='4'/>
+                    {/* onPress={setTrainingType} */}
+                  </View>
+                  {
+                    /**
+                     *@TEXT_AREA
+                    */
+                  }
+                  <View style={[styles.field, { marginBottom: 12 }]}>
+                    <Text style={styles.label}>
+                      Descrição
                     </Text>
 
-                    <View style={styles.column}>
-                      <SmallInput 
-                        maxLength={2} 
-                        // onChangeText={setHour}
-                      />
-                      <Text style={styles.divider}>
-                        :
-                      </Text>
-                      <SmallInput 
-                      maxLength={2} 
-                      // onChangeText={setMinute}
-                      />
-                    </View>
-                  </View>           
-                </View>
-                {
-                  /**
-                   *@CHECK_BOXES
-                  */
-                }
-                {/* Tipo de treino */}
-                <View style={styles.field2}>
-                  <Text style={[styles.label, { marginTop: 6 } ]}>
-                    Tipo de treino 
-                  </Text>
-                  <CheckBox
-                  avoidStyle={false}
-                  title='1'/>
-                  {/* onPress={setTrainingType} */}
-                  
-                  <CheckBox
-                  avoidStyle={false}
-                  title='2'/>
-                  {/* onPress={setTrainingType} */}
-                  
-                  <CheckBox
-                  avoidStyle={false}
-                  title='3'/>
-                  {/* onPress={setTrainingType} */}
-                  
-                  <CheckBox
-                  avoidStyle={false}
-                  title='4'/>
-                  {/* onPress={setTrainingType} */}
-                </View>
-                {
-                  /**
-                   *@TEXT_AREA
-                  */
-                }
-                <View style={[styles.field, { marginBottom: 12 }]}>
-                  <Text style={styles.label}>
-                    Descrição
-                  </Text>
+                    <Text style={styles.caracteresLimit}>
+                      Max 100 caracteres
+                    </Text>
+                  </View>
 
-                  <Text style={styles.caracteresLimit}>
-                    Max 100 caracteres
-                  </Text>
-                </View>
-
-                <TextArea 
-                  multiline
-                  maxLength={100}
-                  numberOfLines={5}
-                  autoCorrect={false}
-                  onChangeText={setDescription}
-                  />
-
-                <View style={styles.footer}>
-                  <Button 
-                    title="Agendar" 
-                    color={secondary85}
-                    secondaryColor={secondary80}
-                    // onPress={handleSave}
+                  <TextArea 
+                    multiline
+                    maxLength={100}
+                    numberOfLines={5}
+                    autoCorrect={false}
+                    onChangeText={setDescription}
                     />
-                </View>
-            </View>
-              {
+
+                  <View style={styles.footer}>
+                    <Button 
+                      title="Agendar" 
+                      color={secondary85}
+                      secondaryColor={secondary80}
+                      // onPress={handleSave}
+                      />
+                  </View>
+              </View>
+                {
                   /**
                    *@SEND_MAIL
                   */
                 }
-              <View style={styles.footer}>
-                <ButtonIcon 
-                  title="Enviar Treino por email" 
-                  // keep data in db
-                  onPress={handleOpenGuilds}
-                  />
-                </View>
-                  
-          </LinearGradient>
-        </Background>
-      </ScrollView>  
-      
-    </KeyboardAvoidingView>
+                <View style={styles.footer}>
+                  <ButtonIcon 
+                    title="Enviar Treino por email" 
+                    // keep data in db
+                    onPress={handleOpenGuilds}
+                    />
+                  </View>
+                    
+            </LinearGradient>
+          </Background>
+        </ScrollView>  
+        <ModalView visible={openGuildsModa} closeModal={handleCloseGuilds}>
+        <Guilds handleGuildSelect={handleGuildSelect}/>
+        </ModalView>
+      </KeyboardAvoidingView>              
+    </LinearGradient>
   )
 }
