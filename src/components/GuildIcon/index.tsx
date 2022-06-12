@@ -7,8 +7,8 @@ import DiscordSvg from '../../assets/discord.svg'
 const { CDN_IMAGE } = process.env
 
 type Props = {
-  guildId: string
-  iconId: string | null
+  guildId?: string
+  iconId? : string | null
 }
 
 export function GuildIcon({ guildId, iconId }: Props) {

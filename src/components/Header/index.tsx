@@ -12,9 +12,10 @@ type Props = {
   title: string;
   //ReactNode: Nó de um componente-> permite que eu passe de forma dinâmica o que eu quero inserir
   action?: ReactNode;
+  color?: string;
 }
 
-export function Header({ title, action}: Props ){
+export function Header({ title, action, color}: Props ){
   const { secondary100, secondary40, heading, secondary80 } = theme.colors;
 
   const navigation = useNavigation();
@@ -31,8 +32,8 @@ export function Header({ title, action}: Props ){
     <LinearGradient
     style={styles.container}
     // colors={['red', 'black']}
-    colors={[secondary40, secondary80]}
-    start={{ x: 1.1, y: 0 }}
+    colors={[secondary40, color? color:secondary80]}
+    start={{ x: 0.8, y: 0 }}
     end={{ x: 0, y: 0.1 }}
     >
 
