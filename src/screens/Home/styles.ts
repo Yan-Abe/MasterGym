@@ -15,7 +15,6 @@ export const styles = StyleSheet.create({
     marginTop: getStatusBarHeight() + 26,
     //getStatusBarHeight() = iphone X status bar height
     marginBottom: 42
-<<<<<<< HEAD
   },
   content: {
     marginTop: 42
@@ -23,7 +22,5 @@ export const styles = StyleSheet.create({
   matches: {
     marginTop: 24,
     marginLeft: 24
-=======
->>>>>>> 35b340016fbd0982d47a5f65f4db9daf954b1c0c
   }
 })

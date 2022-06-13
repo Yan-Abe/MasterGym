@@ -14,7 +14,6 @@ type Props = {
 }
 
 export function Guilds({ handleGuildSelect }: Props){
-<<<<<<< HEAD
   // const guilds = [
   //   {
   //     id: '1', 
@@ -25,8 +24,6 @@ export function Guilds({ handleGuildSelect }: Props){
   // ]
 
 
-=======
->>>>>>> 35b340016fbd0982d47a5f65f4db9daf954b1c0c
   const [guilds, setGuilds] = useState<GuildProps[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -45,11 +42,7 @@ export function Guilds({ handleGuildSelect }: Props){
   return (
     <View style={styles.container}>
       {
-<<<<<<< HEAD
         // loading ? <Load /> :
-=======
-        loading ? <Load /> :
->>>>>>> 35b340016fbd0982d47a5f65f4db9daf954b1c0c
         <FlatList 
           data={guilds}
           keyExtractor={item => item.id}

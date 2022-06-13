@@ -1,7 +1,6 @@
 import React from 'react';
 import { Text } from 'react-native';
 import { RectButton, RectButtonProps } from 'react-native-gesture-handler';
-<<<<<<< HEAD
 import { theme } from '../../global/styles/theme'
 import { styles } from './styles';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -41,24 +40,3 @@ export function Button({ title, color, secondaryColor, avoidStyle=false,...rest 
       </RectButton>
     </LinearGradient>
 );}
-=======
-
-import { styles } from './styles';
-
-type Props = RectButtonProps & {
-  title: string;
-}
-
-export function Button({ title, ...rest } : Props){
-  return(
-    <RectButton 
-      style={styles.container} 
-      {...rest }
-    >
-      <Text style={styles.title}>
-        { title }
-      </Text>
-    </RectButton>
-  );
-}
->>>>>>> 35b340016fbd0982d47a5f65f4db9daf954b1c0c
